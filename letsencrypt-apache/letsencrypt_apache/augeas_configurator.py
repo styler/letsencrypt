@@ -32,7 +32,7 @@ class AugeasConfigurator(common.Plugin):
         # Set Augeas to not load anything by default
         my_flags = augeas.Augeas.NONE | augeas.Augeas.NO_MODL_AUTOLOAD
         AUGEAS_LENSES = pkg_resources.resource_filename(
-                            'letsencrypt_apache', 'lenses')
+                            'letsencrypt_apache', 'augeas_lenses')
         self.aug = augeas.Augeas(loadpath=AUGEAS_LENSES, flags=my_flags)
         self.save_notes = ""
 
