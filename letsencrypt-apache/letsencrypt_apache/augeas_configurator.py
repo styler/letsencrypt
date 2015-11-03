@@ -1,12 +1,13 @@
 """Class of Augeas Configurators."""
 import logging
-import pkg_resources
 
 import augeas
 
 from letsencrypt import errors
 from letsencrypt import reverter
 from letsencrypt.plugins import common
+
+from letsencrypt_apache import constants
 
 logger = logging.getLogger(__name__)
 
@@ -31,9 +32,8 @@ class AugeasConfigurator(common.Plugin):
         # Set Augeas flags to not save backup (we do it ourselves)
         # Set Augeas to not load anything by default
         my_flags = augeas.Augeas.NONE | augeas.Augeas.NO_MODL_AUTOLOAD
-        AUGEAS_LENSES = pkg_resources.resource_filename(
-                            'letsencrypt_apache', 'augeas_lenses')
-        self.aug = augeas.Augeas(loadpath=AUGEAS_LENSES, flags=my_flags)
+        self.aug = augeas.Augeas(loadpath=constants.AUGEAS_LENS_DIR,
+                                 flags=my_flags)
         self.save_notes = ""
 
         # See if any temporary changes need to be recovered
