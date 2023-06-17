@@ -1,5 +1,5 @@
 # This Dockerfile builds an image for development.
-FROM ubuntu:trusty
+FROM ubuntu:trusty-20190515
 MAINTAINER Jakub Warmuz <jakub@warmuz.org>
 MAINTAINER William Budington <bill@eff.org>
 MAINTAINER Yan <yan@eff.org>
