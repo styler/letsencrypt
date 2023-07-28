@@ -1,4 +1,4 @@
-FROM httpd
+FROM httpd:2-bookworm
 MAINTAINER Brad Warren <bradmw@umich.edu>
 
 RUN mkdir /var/run/apache2
