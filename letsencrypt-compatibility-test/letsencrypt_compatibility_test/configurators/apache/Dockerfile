@@ -1,4 +1,4 @@
-FROM httpd
+FROM httpd:2.4.66-trixie
 MAINTAINER Brad Warren <bradmw@umich.edu>
 
 RUN mkdir /var/run/apache2
